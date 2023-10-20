@@ -1,8 +1,5 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:scalable_flutter/features/login_screen/login_screen.dart';
 
 typedef OnSignupCallback = FutureOr<void> Function(
     String name, String email, String password);
@@ -24,9 +21,9 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +57,7 @@ class _SignupScreenState extends State<SignupScreen> {
           const SizedBox(height: 10.0),
           TextButton(
             onPressed: widget.onGotoLogin,
-            child: Text('Already registered, login'),
+            child: const Text('Already registered, login'),
           ),
         ],
       ),
